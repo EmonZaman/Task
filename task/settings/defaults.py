@@ -69,7 +69,7 @@ MIDDLEWARE = [
 
 ]
 
-ROOT_URLCONF = 'cholojai.urls'
+ROOT_URLCONF = 'task.urls'
 
 TEMPLATES = [
     {
@@ -87,7 +87,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'cholojai.wsgi.application'
+WSGI_APPLICATION = 'task.wsgi.application'
 
 
 # Database
