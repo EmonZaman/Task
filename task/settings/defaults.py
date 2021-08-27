@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     "debug_toolbar",
     'rest_framework',
+     'django_countries',
     # my apps
     'accounts',
     'core',
