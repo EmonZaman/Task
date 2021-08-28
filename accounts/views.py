@@ -20,46 +20,21 @@ class LoginView(View):
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         country = request.POST.get('country')
-
-
-        print(first_name, last_name, email, country)
-        # u = User()
-        # u.objects.get(username=username)
-        # u.objects.get(email=email)
-        # u.objects.get(password=password)
-        u = User.objects.create_user(first_name=first_name, last_name=last_name, email=email, country=country)
-
-        u.save()
-        # login(request, u)
-        return render(request, self.template_index)
-
-
-class NextView(View):
-    template_name = "accounts/form2.html"
-
-
-    template_index = "accounts/show_details.html"
-
-    def get(self, request):
-        return render(request, self.template_name)
-
-    def post(self, request):
-        print(request.POST)
         username = request.POST.get('username')
         password = request.POST.get('password')
-        confirm_pass = request.POST.get('password_confirm')
 
-
-        print(username, password, confirm_pass)
+        print(first_name, last_name, email, country, username, password)
         # u = User()
         # u.objects.get(username=username)
         # u.objects.get(email=email)
         # u.objects.get(password=password)
-        u = User.objects.create_user(username=username,  password=password)
+        u = User.objects.create_user(first_name=first_name, last_name=last_name, email=email, country=country,
+                                     username=username, password=password)
         u.set_password(password)
         u.save()
         login(request, u)
         return render(request, self.template_index)
 
+
 class ShowView(TemplateView):
-    template_name = 'accounts/show_details.html'
+    template_name = 'accounts/form2.html'

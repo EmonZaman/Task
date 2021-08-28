@@ -7,6 +7,6 @@ from django_countries.fields import CountryField
 
 
 class User(AbstractUser):
-    country = models.CharField(max_length=25, blank=True, unique=True, null=True)
+    country = models.CharField(max_length=25, blank=True,  null=True)
 
 
